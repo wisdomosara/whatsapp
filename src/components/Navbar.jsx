@@ -10,7 +10,7 @@ export default class Navbar extends Component {
         }
         return (
             <div className="header">
-                <nav>
+                <nav className="py-4">
                     <div className="nav-left">
                         <Link to='/' style={navStyle}>
                             <h1 className="mb-0">Whatsapp</h1>
@@ -18,7 +18,7 @@ export default class Navbar extends Component {
                     </div>
                     <div className="nav-right">
                         <i className="fas fa-search"></i>
-                        <i className="fas fa-directions "></i>
+                        <i class="fas fa-ellipsis-v    "></i>
                     </div>
                 </nav>
                 <div className="controls container-fluid">

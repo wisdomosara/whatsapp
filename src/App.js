@@ -8,7 +8,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Navbar />
         <Switch>
@@ -18,7 +18,7 @@ function App() {
           <Route path='/calls' exact component={Calls}/>
         </Switch>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 

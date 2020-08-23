@@ -20,16 +20,16 @@ class Chat extends Component {
     }
     return (
       <>
-        <div className="item d-flex px-2 py-1 justify-content-between align-items-center">
+        <div className="item d-flex px-3 py-2 justify-content-between align-items-center">
             <div className="person d-flex align-items-center">
-                <img src="logo192.png" width="60px" className="mr-2"></img>
+                <img src="favicon.ico" width="50px" className="mr-2"></img>
                 <div className="name">
                     <h6>Name</h6>
                     <p className="mb-0"><i className="fas fa-check-double mr-1 "></i>This is the message</p>
                 </div>
             </div>
             <div className="time d-flex flex-column justify-content-end">
-                <h6>12:26pm</h6>
+                <p className="mb-1">12:26pm</p>
                 <div style={unread}>
                     <p className="mb-0">3</p>
                 </div>
