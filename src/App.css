@@ -1,0 +1,42 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  min-height: 5vh;
+  align-items: center;
+  padding: 5px 20px;
+  font-weight: 200;
+  background-color: rgb(2, 63, 2);
+  color:white
+}
+nav h1{
+  font-weight: 300;
+  font-size: 30px;
+}
+.header{
+  background-color: rgb(2, 63, 2);
+}
+.nav-right i{
+  float:left;
+  margin-left:20px;
+}
+.active{
+ border-bottom: 3px solid white
+}
+.controls{
+  background-color: rgb(2, 63, 2);
+  margin-bottom: 2px;
+  position: -webkit-sticky;
+  top: 0;
+}
+.controls a{
+  text-decoration: none;
+  color: white;
+
+}
+.controls h5{
+  font-weight: 300
+}
+.item{
+  background-color: white;
+  border-bottom: 1px solid grey;
+}
