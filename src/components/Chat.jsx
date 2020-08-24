@@ -4,7 +4,7 @@ class Chat extends Component {
     
   render() {
     const unread = {
-        backgroundColor : "green",
+        backgroundColor : "#25d366",
         borderRadius : "50%",
         display:"flex",
         width: 20,
@@ -20,18 +20,20 @@ class Chat extends Component {
     }
     return (
       <>
-        <div className="item d-flex px-3 py-2 justify-content-between align-items-center">
+        <div className="item d-flex px-3  align-items-center">
             <div className="person d-flex align-items-center">
-                <img src="favicon.ico" width="50px" className="mr-2"></img>
-                <div className="name">
-                    <h6>Name</h6>
-                    <p className="mb-0"><i className="fas fa-check-double mr-1 "></i>This is the message</p>
-                </div>
+                <img src="favicon.ico" width="55px" className="mr-2"></img>
             </div>
-            <div className="time d-flex flex-column justify-content-end">
-                <p className="mb-1">12:26pm</p>
-                <div style={unread}>
-                    <p className="mb-0">3</p>
+            <div className="chat-right pb-3 pt-3">
+                <div className="name">
+                        <h6 className="mb-2">Name</h6>
+                        <p className="mb-0"><i className="fas fa-check-double mr-1 "></i>This is the message</p>
+                </div>
+                <div className="time d-flex flex-column float-right">
+                    <p className="mb-1">12:26pm</p>
+                    <div style={unread} className="mr-2">
+                        <p className="mb-0 count">3</p>
+                    </div>
                 </div>
             </div>
         </div>

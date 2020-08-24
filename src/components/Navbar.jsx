@@ -8,9 +8,13 @@ export default class Navbar extends Component {
             color:"white",
             fontWeight: "200"
         }
+        const fixed ={
+            position : "fixed",
+            top : 0
+        }
         return (
             <div className="header">
-                <nav className="py-4">
+                <nav className="pt-3 pb-4">
                     <div className="nav-left">
                         <Link to='/' style={navStyle}>
                             <h1 className="mb-0">Whatsapp</h1>
@@ -18,10 +22,10 @@ export default class Navbar extends Component {
                     </div>
                     <div className="nav-right">
                         <i className="fas fa-search"></i>
-                        <i class="fas fa-ellipsis-v    "></i>
+                        <i className="fas fa-ellipsis-v    "></i>
                     </div>
                 </nav>
-                <div className="controls container-fluid">
+                <div className="controls container-fluid" style={this.props.state.view ? fixed : null}>
                     <div className="row">
                         <NavLink to="/camera" className="col-1 d-flex justify-content-center align-items-center">
                             <div >
