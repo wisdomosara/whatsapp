@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom' ;
 
 export default class Navbar extends Component {
+
     render() {
         const navStyle = {
             textDecoration: "none",
@@ -10,7 +11,8 @@ export default class Navbar extends Component {
         }
         const fixed ={
             position : "fixed",
-            top : 0
+            top : 0,
+            backgroundColor: "#075E54"
         }
         return (
             <div className="header">
@@ -25,7 +27,7 @@ export default class Navbar extends Component {
                         <i className="fas fa-ellipsis-v    "></i>
                     </div>
                 </nav>
-                <div className="controls container-fluid" style={this.props.state.view ? fixed : null}>
+                <div className="controls container-fluid" >
                     <div className="row">
                         <NavLink to="/camera" className="col-1 d-flex justify-content-center align-items-center">
                             <div >

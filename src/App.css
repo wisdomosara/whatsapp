@@ -35,6 +35,12 @@ nav h1{
   color: rgb(196, 196, 196)
 
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #075E54;
+}
 .controls h5{
   font-weight: 300;
   font-size: 17px
