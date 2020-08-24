@@ -56,14 +56,15 @@ nav h1{
   font-weight: 300
 }
 .name p{
-  font-weight: 200;
-  color: rgb(153, 152, 152)
+  font-weight: 300;
+  color: rgb(121, 121, 121)
 }
 .time p{
-  font-weight: 200;
-  color: rgb(170, 166, 166)
+  font-weight: 300;
+  color: rgb(121, 121, 121)
 }
 .count{
+  font-weight: 300;
   color: white !important
 }
 .chat-right{
