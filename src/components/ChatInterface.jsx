@@ -30,8 +30,12 @@ class ChatInterface extends Component {
     const transform = {
       transform : "rotate(90deg)"
     }
+    const body ={
+      backgroundColor : "rgb(216, 214, 214)",
+      height: "100vh"
+    }
     return (
-      <>
+      <div style={body}>
         <div className="d-flex px-3 justify-content-between align-items-center py-1" style={background}>
             <div className="d-flex  align-items-center">
               <Link to={`/chats`} onClick={this.handleClick} style={link}><i className="fas fa-arrow-left   mr-2 "></i></Link>
@@ -56,7 +60,7 @@ class ChatInterface extends Component {
             <i class="fas fa-microphone " ></i>
           </div>
         </div>
-      </>
+      </div>
     )
   }
 }

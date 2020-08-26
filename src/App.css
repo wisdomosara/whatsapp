@@ -106,11 +106,30 @@ form{
 .bottom-left{
   width:calc(100% - 12vw);
   border-radius: 70px;
-  border: 1px solid rgb(121, 121, 121);
   color: rgb(121, 121, 121)
 }
 .bottom-right{
   width:12vw !important;
   height: 12vw !important
   
+}
+@media (min-width: 350px) {
+  .bottom-flex{
+    width: 100%;
+    position: absolute;
+    bottom: 10px
+  }
+  .bottom-flex i {
+    font-size: 18px
+  }
+  .bottom-left{
+    width:calc(100% - 44px);
+    border-radius: 70px;
+    color: rgb(121, 121, 121)
+  }
+  .bottom-right{
+    width:44px !important;
+    height: 44px !important
+    
+  }
 }
