@@ -30,7 +30,7 @@ class Chat extends Component {
             <div className="person d-flex align-items-center">
                 <img src={this.props.chat.image} alt='heads' width="55px" className="mr-3" ></img>
             </div>
-            <Link to={`/chats/${this.props.chat.id}`} className="click" onClick={this.handleClick}>
+            <Link to={`/${this.props.chat.id}`} className="click" onClick={this.handleClick}>
                 <div className="chat-right pb-3 pt-3" >
                     <div className="name">
                             <h6 className="mb-2 text-dark">{this.props.chat.name}</h6>

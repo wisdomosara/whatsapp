@@ -55,7 +55,7 @@ function myFunction() {
             <Route path='/chats' exact component={Chats}/>
             <Route path='/status' exact component={Status}/>
             <Route path='/calls' exact component={Calls}/>
-            <Route path = '/chats/:id' exact component= {ChatInterface}/>
+            <Route path = '/:id' exact component= {ChatInterface}/>
           </Switch>
         </BrowserRouter>
       </>

@@ -45,8 +45,8 @@ class ChatInterface extends Component {
             </div>
             
         </div>
-        <div className="d-flex bottom-flex justify-content-between px-1">
-          <div className="d-flex align-items-center mr-2 bg-white bottom-left pr-3  pl-2 py-1">
+        <div className="d-flex bottom-flex justify-content-between px-2">
+          <div className="d-flex align-items-baseline mr-2 bg-white bottom-left pr-3  pl-2 py-2">
             <i class="fas fa-smile mr-2"></i>
             <form><input placeholder="Type a message" className="input"></input></form>
             <div className="ml-auto"><i class="fas fa-paperclip mr-3" style={transform}></i>
