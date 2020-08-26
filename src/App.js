@@ -5,14 +5,25 @@ import Camera from './components/Camera'
 import Chats from './components/Chats';
 import Status from './components/Status';
 import Calls from './components/Calls';
+import ChatInterface from './components/ChatInterface'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import { connect } from 'react-redux';
 
 class App extends Component {
- state = {
-   view: false
- }
-
+ 
+componentDidUpdate() {
+  if(this.props.clicked) {
+    console.log("clickedd")
+    document.querySelector(".header").style.display = "none"
+  }
+  else{
+    console.log("clickedd")
+    document.querySelector(".header").style.display = "block"
+  }
+  
+}
  componentDidMount() {
+  
   // When the user scrolls the page, execute myFunction
 window.onscroll = function() {myFunction()};
 
@@ -33,16 +44,18 @@ function myFunction() {
  }
 
   render () {
+    console.log(this.props)
       return (
       <>
         <BrowserRouter>
-          <Navbar view = {this.state.view}/>
+          <Navbar/>
           <Switch>
             <Route path='/' exact component={Chats}/>
             <Route path='/camera' exact component={Camera}/>
             <Route path='/chats' exact component={Chats}/>
             <Route path='/status' exact component={Status}/>
             <Route path='/calls' exact component={Calls}/>
+            <Route path = '/chats/:id' exact component= {ChatInterface}/>
           </Switch>
         </BrowserRouter>
       </>
@@ -50,5 +63,8 @@ function myFunction() {
   }
   
 }
+const mapStateToProps = (state) => ({
+  clicked : state.clicked.clicked
+})
 
-export default App;
+export default connect(mapStateToProps)(App);

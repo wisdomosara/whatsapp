@@ -26,9 +26,21 @@ nav h1{
 .controls{
   width: 100%;
   
-  overflow: hidden;
+  overflow-x: hidden;
   margin-bottom: 2px;
  
+}
+.item a, .item a:hover{
+  width: 100% !important;
+  display: flex;
+  text-decoration: none;
+}
+.message{
+  overflow-y: hidden !important;
+  height: 24px
+}
+.controls .row{
+  flex-wrap: nowrap !important
 }
 .controls a{
   text-decoration: none;
@@ -72,4 +84,29 @@ nav h1{
   justify-content: space-between !important;
   width: 100%;
   border-bottom: 0.05px solid rgb(218, 216, 216);
+}
+.input, .input:hover, .input:focus {
+  border-style: none;
+  outline: none;
+  width: 100% !important;
+  padding-bottom: 5px
+}
+form{
+  width: 70% !important
+}
+.bottom-flex{
+  width: 100%;
+  position: absolute;
+  bottom: 10px
+}
+.bottom-left{
+  width:calc(100% - 40px);
+  border-radius: 70px;
+  border: 1px solid rgb(121, 121, 121);
+  color: rgb(121, 121, 121)
+}
+.bottom-right{
+  width:40px !important;
+  height: 40px !important
+  
 }

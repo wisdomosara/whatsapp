@@ -9,17 +9,17 @@ export default class Navbar extends Component {
             color:"white",
             fontWeight: "200"
         }
-        const fixed ={
-            position : "fixed",
-            top : 0,
-            backgroundColor: "#075E54"
-        }
+        // const fixed ={
+        //     position : "fixed",
+        //     top : 0,
+        //     backgroundColor: "#075E54"
+        // }
         return (
             <div className="header">
                 <nav className="pt-3 pb-4">
                     <div className="nav-left">
                         <Link to='/' style={navStyle}>
-                            <h1 className="mb-0">Whatsapp</h1>
+                            <h1 className="mb-0">WisApp</h1>
                         </Link>
                     </div>
                     <div className="nav-right">
