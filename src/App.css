@@ -93,7 +93,7 @@ nav h1{
   font-size: 18px
 }
 form{
-  width: 70% !important
+  width: 60% !important
 }
 .bottom-flex{
   width: 100%;
@@ -101,19 +101,20 @@ form{
   bottom: 10px
 }
 .bottom-flex i {
-  font-size: 5vw
+  font-size:20px
 }
 .bottom-left{
-  width:calc(100% - 12vw);
+  width:calc(100% - 40px);
+  box-sizing: border-box;
   border-radius: 70px;
   color: rgb(121, 121, 121)
 }
 .bottom-right{
-  width:12vw !important;
-  height: 12vw !important
+  width:40px !important;
+  height:40px !important
   
 }
-@media (min-width: 350px) {
+@media only screen and (min-width: 340px) {
   .bottom-flex{
     width: 100%;
     position: absolute;
@@ -121,6 +122,9 @@ form{
   }
   .bottom-flex i {
     font-size: 18px
+  }
+  form{
+    width: 70% !important
   }
   .bottom-left{
     width:calc(100% - 44px);

@@ -30,9 +30,9 @@ class ChatInterface extends Component {
     const transform = {
       transform : "rotate(90deg)"
     }
-    const body ={
+    const body = {
       backgroundColor : "rgb(216, 214, 214)",
-      height: "100vh"
+      minHeight: "100vh"
     }
     return (
       <div style={body}>
