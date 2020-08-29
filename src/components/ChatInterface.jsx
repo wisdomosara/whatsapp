@@ -70,9 +70,8 @@ handleInput = () => {
     }
     const body = {
       backgroundColor : "rgb(216, 214, 214)",
-      minHeight: "100vh",
+      height: "100vh",
       width: "100%",
-      position: "fixed"
     }
     let chatItem = this.state.messageArr.map(item => <Chate  key={item.id} text={item.text} time={item.time} state={this.state}/>)
     return (
