@@ -32,13 +32,10 @@ handleSubmit = (e) => {
   console.log(this.state)
   
   setTimeout(() => {
-    console.log("wisdom")
-    this.setState({
-      received : true
-    })
+    document.querySelector(".change").innerHTML = `<i class="fas fa-check-double" style="color:blue; font-size:12px"></i>`
   },1000)
   setTimeout(() => {
-    console.log("wisdom")
+    
     this.setState({
       receiveds : true
     })
@@ -59,11 +56,11 @@ handleInput = () => {
       borderRadius: "50%"
     }
     const background = {
-      backgroundColor : "#075E54",
+      backgroundColor : "rgba(7, 94, 84, 0.759)",
       color: "white"
     }
     const microphone = {
-      backgroundColor : "#075E54",
+      backgroundColor : "rgba(7, 94, 84, 0.759)",
       color: "white",
       
       borderRadius: "50%"
@@ -73,10 +70,11 @@ handleInput = () => {
     }
     const body = {
       backgroundColor : "rgb(216, 214, 214)",
-      minHeight: "100vh"
+      minHeight: "100vh",
+      width: "100%",
+      position: "fixed"
     }
     let chatItem = this.state.messageArr.map(item => <Chate  key={item.id} text={item.text} time={item.time} state={this.state}/>)
-    console.log(this.state.messageArr)
     return (
       <div style={body}>
         <div className="d-flex px-3 justify-content-between align-items-center py-1 mb-2" style={background}>
@@ -92,9 +90,9 @@ handleInput = () => {
             </div>
             
         </div>
-        <div className="float-right px-2">{chatItem}
+        <div className="float-right px-2 mb-2">{chatItem}
         </div>
-        <div style={{clear: "both"}}><Chater state={this.state}/></div>
+        <div style={{clear: "both", maxWidth: "60%"}} className="px-2 mt-2"><Chater state={this.state}/></div>
         <div className="d-flex bottom-flex justify-content-between px-2">
           <div className="d-flex align-items-baseline mr-2 bg-white bottom-left pr-3  pl-2 py-2">
             <i className="fas fa-smile mr-2"></i>
@@ -113,11 +111,13 @@ handleInput = () => {
 }
 function Chater(props) {
   return (
-    <div style={{maxWidth: "70%"}}>
-      {props.state.receiveds ? <div className="bg-white py-2 px-2 d-flex align-items-baseline rounded mb-1">
-      <p className="mr-2 mb-0">this is just an animated message testing out logic</p>
-      <p className="mr-1 mb-0" style={{color: "rgb(121, 121, 121)", fontSize:12}}>{props.time}</p>
-    </div> : null}
+    <div>
+      {props.state.receiveds ? 
+      <div className="bg-white py-2 px-2 d-flex align-items-baseline flex-wrap rounded mb-1">
+      <p className="mr-2 mb-0">this is an automated message testing the logic</p>
+      <p className="mr-1 mb-0 text-right" style={{color: "rgb(121, 121, 121)", fontSize:12, width:"100%"}}>{new Date().toLocaleTimeString()}</p>
+    </div> 
+    : null}
     </div>
     
   )
@@ -127,7 +127,7 @@ function Chate(props) {
     <div className="bg-white py-2 px-2 d-flex align-items-baseline rounded mb-1">
       <p className="mr-2 mb-0">{props.text}</p>
       <p className="mr-1 mb-0" style={{color: "rgb(121, 121, 121)", fontSize:12}}>{props.time}</p>
-      {props.state.received ? <i className="fas fa-check-double" style={{color:"blue", fontSize:12}}></i> : <i className="fas fa-check" style={{color:"grey", fontSize:12}}></i>}
+      <p className="change mb-0"><i className="fas fa-check" style={{color:"grey", fontSize:12}}></i></p>
     </div>
   )
 }
