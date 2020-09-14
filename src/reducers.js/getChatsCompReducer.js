@@ -6,7 +6,7 @@ const initialState = {
         {
             id : 1,
             name : "Wisdom",
-            image : 'logo192.png',
+            image : 'https://source.unsplash.com/random/200x400',
             message : ["well this is a dummy message i sent", "previously sent"],
             new : false,
             send : true,
@@ -16,7 +16,7 @@ const initialState = {
         {
             id : 2,
             name : "Ese",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x350',
             message : ["well this is a dummy message received", "previously sent"],
             new : false,
             newCount : 0,
@@ -26,7 +26,7 @@ const initialState = {
         {
             id : 3,
             name : "Victor",
-            image : 'logo192.png',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message i received", "previously sent"],
             new : true,
             newCount : 1,
@@ -36,7 +36,7 @@ const initialState = {
         {
             id : 4,
             name : "Precious",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/250x300',
             message : ["well this is a dummy message from the redux store", "previously sent"],
             new : true,
             newCount : 3,
@@ -46,7 +46,7 @@ const initialState = {
         {
             id : 5,
             name : "Osara",
-            image : 'logo192.png',
+            image : 'https://source.unsplash.com/random/300x300',
             message : ["well this is a dummy message from the redux store", "previously sent"],
             new : true,
             newCount : 2,
@@ -56,7 +56,7 @@ const initialState = {
         {
             id : 6,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x400',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -66,7 +66,7 @@ const initialState = {
         {
             id : 7,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -76,7 +76,7 @@ const initialState = {
         {
             id : 8,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -86,7 +86,7 @@ const initialState = {
         {
             id : 9,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -96,7 +96,7 @@ const initialState = {
         {
             id : 10,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -106,7 +106,7 @@ const initialState = {
         {
             id : 11,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -116,7 +116,7 @@ const initialState = {
         {
             id : 12,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -126,7 +126,7 @@ const initialState = {
         {
             id : 13,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -136,7 +136,7 @@ const initialState = {
         {
             id : 14,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -146,7 +146,7 @@ const initialState = {
         {
             id : 15,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -156,7 +156,7 @@ const initialState = {
         {
             id : 16,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -166,7 +166,7 @@ const initialState = {
         {
             id : 17,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -176,7 +176,7 @@ const initialState = {
         {
             id : 18,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -186,7 +186,7 @@ const initialState = {
         {
             id : 19,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,
@@ -196,7 +196,7 @@ const initialState = {
         {
             id : 20,
             name : "Wisdom",
-            image : 'favicon.ico',
+            image : 'https://source.unsplash.com/random/200x300',
             message : ["well this is a dummy message", "previously sent"],
             new : false,
             newCount : 0,

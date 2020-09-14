@@ -16,7 +16,7 @@ export default class Navbar extends Component {
         // }
         return (
             <div className="header">
-                <nav className="pt-3 pb-4">
+                <nav className="pt-3 pb-3">
                     <div className="nav-left">
                         <Link to='/' style={navStyle}>
                             <h1 className="mb-0">WisApp</h1>

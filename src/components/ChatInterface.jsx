@@ -79,7 +79,7 @@ handleInput = () => {
         <div className="d-flex px-3 justify-content-between align-items-center py-1 mb-2" style={background}>
             <div className="d-flex  align-items-center">
               <Link to={`/chats`} onClick={this.handleClick} style={link}><i className="fas fa-arrow-left   mr-2 "></i></Link>
-              <img src={image} alt="head" width="40px" className="mr-2" style={img}></img>
+              <img src="https://picsum.photos/200" alt="head" width="40px" className="mr-2" style={img}></img>
               <h6 className="mb-0">{this.props.chatsComp[0].name}</h6>
             </div>
             <div className="pb-3 pt-3">
@@ -92,7 +92,7 @@ handleInput = () => {
         <div className="float-right px-2 mb-2">{chatItem}
         </div>
         <div style={{clear: "both", maxWidth: "60%"}} className="px-2 mt-2"><Chater state={this.state}/></div>
-        <div className="d-flex bottom-flex justify-content-between px-2">
+        <div className="d-flex bottom-flex justify-content-between px-2 fixed-bottom">
           <div className="d-flex align-items-baseline mr-2 bg-white bottom-left pr-3  pl-2 py-2">
             <i className="fas fa-smile mr-2"></i>
             <form onSubmit={this.handleSubmit}><input placeholder="Type a message" className="input" value={this.state.input} onChange={this.handleInput}></input></form>

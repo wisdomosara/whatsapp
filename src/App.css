@@ -101,7 +101,6 @@ form{
 }
 .bottom-flex{
   width: 100%;
-  position: fixed;
   max-width: 1440px !important;
   margin: 0 auto;
   bottom: 10px

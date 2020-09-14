@@ -28,7 +28,7 @@ class Chat extends Component {
       <>
         <div className="item d-flex px-3  align-items-center" >
             <div className="person d-flex align-items-center">
-                <img src={this.props.chat.image} alt='heads' width="55px" className="mr-3" ></img>
+                <img src={this.props.chat.image} alt='heads' width="55px" height="55px" className="mr-3" ></img>
             </div>
             <Link to={`/${this.props.chat.id}`} className="click" onClick={this.handleClick}>
                 <div className="chat-right pb-3 pt-3" >
