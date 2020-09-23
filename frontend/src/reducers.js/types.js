@@ -1,0 +1,2 @@
+export const CHATS_COMP = "CHATS_COMP"; 
+export const UPDATE_MESSAGE = "UPDATE_MESSAGE"
