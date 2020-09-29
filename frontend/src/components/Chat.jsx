@@ -25,11 +25,11 @@ class Chat extends Component {
             <div className="person d-flex align-items-center">
                 <img src={this.props.chat.image} alt='heads' width="55px" height="55px" className="mr-3" ></img>
             </div>
-            <Link to={`/${this.props.chat.id}`} className="click">
+            <Link to={`/${this.props.chat._id}`} className="click">
                 <div className="chat-right pb-3 pt-3" >
                     <div className="name">
                             <h6 className="mb-1 text-dark pt-2">{this.props.chat.name}</h6>
-                            <p className="mb-0 message">{!this.props.chat.message[this.props.chat.message.length - 1].sent ? null : <i className="fas fa-check-double mr-1 "></i>}{this.props.chat.message[this.props.chat.message.length - 1].text}</p>
+                            <p className="mb-0 message">{!this.props.chat.message[this.props.chat.message.length - 1].sent ? null : this.props.chat.message.seen ? <i className="fas fa-check-double mr-1 text-primary"></i> : <i className="fas fa-check mr-1 "></i>}{this.props.chat.message[this.props.chat.message.length - 1].text.length > 20 ? this.props.chat.message[this.props.chat.message.length - 1].text.substring(0,20) + "..." : this.props.chat.message[this.props.chat.message.length - 1].text}</p>
                     </div>
                     <div className="time d-flex flex-column float-right">
                         <p className="mb-2 pt-2" style={this.props.chat.message[this.props.chat.message.length - 1].sent ? null : !this.props.chat.message[this.props.chat.message.length - 1].sent && this.props.chat.message[this.props.chat.message.length - 1].new ? {color : "#25d366"} : null}>{this.props.chat.message[this.props.chat.message.length - 1].time}</p>

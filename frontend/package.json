@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.20.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "firebase": "^7.19.1",
@@ -18,15 +19,17 @@
     "react-scripts": "3.4.1",
     "react-scroll-to-bottom": "^3.0.0",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && echo '/* /index.html  200' | cat >build/_redirects",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },

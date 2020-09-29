@@ -1,8 +1,16 @@
 import  {CHATS_COMP}  from '../reducers.js/types'
+import axios from 'axios'
+
 
 export  const getChatsComp = () => {
-        return {
-            type: CHATS_COMP
-        }
-    
+        return (dispatch) => {
+        axios.get("/api/chats")
+        .then(response => {
+            console.log(response.data)
+            dispatch({
+                type: CHATS_COMP,
+                chats: response.data
+            })
+        }) 
+    }
 };

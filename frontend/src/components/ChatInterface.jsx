@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import {updateMessage} from '../actions.js/updateMessageAction'
-
+import io from 'socket.io-client'
+import { getChatsComp } from '../actions.js/getChatCompAction';
+import axios from 'axios'
 
 
 class ChatInterface extends Component {
@@ -43,7 +45,7 @@ handleSubmit = (e) => {
           seen: false,
           newCount: 0,
           new: false
-        }], this.props.chatsComp[0].id)
+        }], this.props.chatsComp[0]._id)
         this.setState({
           receiveds: true
         })
@@ -56,7 +58,7 @@ handleSubmit = (e) => {
     },1000)
   }
 
-  this.props.updateMessage(this.state.messageArr, this.props.chatsComp[0].id)
+  this.props.updateMessage(this.state.messageArr, this.props.chatsComp[0]._id)
   this.setState({
     messageArr : []
   })
@@ -65,7 +67,14 @@ handleInput = () => {
   this.setState(() => {
     return {input : document.querySelector("input").value}
   })
-
+}
+componentDidMount() {
+  const socket = io.connect("http://localhost:5000")
+  console.log(this.props.chatsComp)
+  this.props.getChatsComp()
+}
+componentWillUnmount() {
+  
 }
   render() {
     const link = {
@@ -100,9 +109,14 @@ handleInput = () => {
       overflowY: "scroll",
       height: "calc(100% - 64px - 70px)",
     }
-    let chatItem = this.props.chatsComp[0].message.map(item => {
-      return item.sent ? <Chate  key={item.id} text={item.text} time={item.time} state={this.state}/> : <Chater  key={item.id} text={item.text} time={item.time} state={this.state}/>
-    })
+ 
+    let chatItem = []
+    
+    if(this.props.chatsComp.length > 0) {
+      this.props.chatsComp[0].message.forEach(item => {
+        return item.sent ? chatItem.push(<Chate  key={item._id} text={item.text} time={item.time} state={this.state} seen={item.seen} />) : chatItem.push(<Chater  key={item._id} text={item.text} time={item.time} state={this.state}/>)
+      })
+    
     return (
       <div style={body}>
         <div className="d-flex px-3 justify-content-between align-items-center py-1 mb-2" style={background}>
@@ -118,7 +132,7 @@ handleInput = () => {
             </div> 
         </div>
         <div className="main" style={main}>
-        <div>{chatItem}
+        <div>{chatItem.length >= 1 ? chatItem : "no chats found"}
         </div>
         </div>
         <div className="d-flex bottom-flex justify-content-between px-2  py-2">
@@ -136,18 +150,23 @@ handleInput = () => {
           
         </div>
       </div>
-    )
+    )}
+    else {
+      return (
+        <div>
+          
+        </div>
+      )
+    }
   }
 }
 function Chater(props) {
   return (
     <div style={{boxSizing: "content-box"}}>
-      {props.state.receiveds ? 
         <div className="bg-white py-2 px-2 ml-2 mt-2 d-flex align-items-baseline flex-wrap rounded mb-1 float-left" style={{maxWidth: "80%", clear: "both", wordWrap: "break-word", boxSizing: "border-box"}}>
         <p className="mb-0 mr-2" style={{maxWidth: "100%"}}>{props.text}</p>
         <p className="mb-0 ml-auto float-right" style={{color: "rgb(121, 121, 121)", fontSize:12, width:"55px"}}>{props.time}</p>
       </div> 
-    : null}
     </div>
     
   )
@@ -156,20 +175,21 @@ function Chate(props) {
   return (
     <div className="py-2 px-2 mr-2 d-flex align-items-baseline flex-wrap rounded mb-1 float-right" style={{maxWidth: "80%", clear: "both", wordWrap: "break-word", backgroundColor: "rgb(237, 248, 186)", boxSizing: "content-box"}}>
       <p className="mr-2 mb-0" style={{maxWidth: "100%"}}>{props.text}</p>
-      <p className="mr-1 mb-0 ml-auto float-right" style={{color: "rgb(121, 121, 121)", fontSize:12, width:"75px"}}>{props.time} {props.state.received ? <i class="fas fa-check-double text-primary"></i> : <i class="fas fa-check  "></i>}</p>
+      <p className=" mb-0 ml-auto float-right" style={{color: "rgb(121, 121, 121)", fontSize:12, width:"75px"}}>{props.time} { props.seen ? <i class="fas fa-check-double text-primary"></i> : <i class="fas fa-check  "></i>}</p>
     </div> 
   )
 }
 const mapStateToProps = (state, ownProps) => {
   let id = ownProps.match.params.id
   return {
-    chatsComp : state.chatsComp.filter(fil => fil.id == id),
+    chatsComp : state.chatsComp.filter(fil => fil._id == id),
   }
   
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-      updateMessage: (message, id) => {dispatch(updateMessage(message, id))}
+      updateMessage: (message, id) => {dispatch(updateMessage(message, id))},
+      getChatsComp: () => {dispatch(getChatsComp())}
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ChatInterface)

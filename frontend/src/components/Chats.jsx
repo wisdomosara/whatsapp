@@ -8,7 +8,7 @@ import Navbar from './Navbar';
  class Chats extends Component {
     
      componentDidMount() {
-         getChatsComp()
+         this.props.getChatsComp()
          if(document.querySelector(".header")) {
             // When the user scrolls the page, execute myFunction
         window.onscroll = function() {myFunction()};
@@ -31,13 +31,14 @@ import Navbar from './Navbar';
          
      }
     render() {
-        const num = this.props.chatsComp.map(chat => <Chat key={chat.id} chat={chat} />)
+        console.log(this.props.chatsComp)
+        const num = this.props.chatsComp.map(chat => <Chat key={chat._id} chat={chat} />)
         return (
             <div>
                 <Navbar/>
                 {num}
                 <div className="newChat shadow">
-                    <i class="fas fa-envelope text-white"></i>
+                    <i className="fas fa-envelope text-white"></i>
                 </div>
             </div>
         )
@@ -45,7 +46,7 @@ import Navbar from './Navbar';
    
 }
 const mapStateToProps = (state) => ({
-    chatsComp : state.chatsComp
+    chatsComp: state.chatsComp
 })
 
 const mapDispatchToProps = (dispatch) => {

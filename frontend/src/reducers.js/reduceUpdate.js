@@ -1,10 +1,15 @@
-import { UPDATE_MESSAGE } from "./types";
+import axios from 'axios'
 
 export default function reduceUpdate(post, action) {
-    if(post.id !== action.id) {
+    if(post._id !== action.id) {
         return post
     }  
     else {
+        //pushing new messages to the database
+        axios.post("/updatemessage", {
+            id: action.id,
+            message: action.message
+        })
         console.log(post.message)
         return Object.assign({}, post, {message: [...post.message,...action.message]})
     }
