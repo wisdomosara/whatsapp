@@ -9,7 +9,7 @@ const mongoose = require("mongoose")
 
 const app = express()
 
-app.use(express.static(path.join(__dirname, "../frontend/build")))
+app.use(express.static(path.join(__dirname, "/frontend/build")))
 
 
 const PORT = process.env.PORT || 5000
@@ -91,7 +91,7 @@ app.post("/updatemessage", function(req,res) {
 })
 
 app.get("/*", function(req,res) {
-    res.sendFile(path.join(__dirname, "../frontend/build", "index.html"))
+    res.sendFile(path.join(__dirname, "/frontend/build", "index.html"))
 })
 io.on("connection", function (socket) {
     console.log("connected")
