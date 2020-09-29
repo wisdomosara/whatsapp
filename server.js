@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended :false}))
 app.use(express.json())
 
 
-mongoose.connect("mongodb://localhost:27017/chats", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://Ikhuoria2:Ikhuoria2@cluster0.mn66h.mongodb.net/chatsdb", { useNewUrlParser: true, useUnifiedTopology: true })
 
 const server = http.createServer(app)
 const io = socketio(server)
@@ -45,15 +45,15 @@ const chat = mongoose.model("chat", chatsSchema)
 
 const newChat = new chat({
     id : 8,
-    name : "Wisdom",
-    image : 'https://source.unsplash.com/random/200x300',
+    name : "Ese",
+    image : 'https://source.unsplash.com/random/250x300',
     message : [{
-        text: "new message",
+        text: "new message from another person",
         id: new Date().toLocaleTimeString(),
         sent: true,
         time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
-        seen: false,
-        newCount: 0,
+        seen: true,
+        newCount: 1,
         new: false
     }],
 })
