@@ -25,7 +25,7 @@ export default class Navbar extends Component {
                 <div className="nav-search px-3">
                     <i className="fas fa-arrow-left mr-2 " style={{color: "#075E54"}} onClick={() => {document.querySelector(".nav-search").style.right = "100%"; document.querySelector(".controls").style.display = "block"}}></i>
                     <form>
-                        <input className="searchBar px-3" type="search" placeholder="Search" autoFocus={true}></input>
+                        <input className="searchBar px-3" type="search" placeholder="Search"></input>
                     </form>
                 </div>
                 <div className="controls container-fluid" >
