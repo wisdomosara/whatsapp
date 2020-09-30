@@ -59,6 +59,7 @@ handleSubmit = (e) => {
   }
 
   this.props.updateMessage(this.state.messageArr, this.props.chatsComp[0]._id)
+  
   this.setState({
     messageArr : []
   })
@@ -72,6 +73,7 @@ componentDidMount() {
   const socket = io.connect("http://localhost:5000")
   console.log(this.props.chatsComp)
   this.props.getChatsComp()
+  
 }
 componentWillUnmount() {
   

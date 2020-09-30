@@ -6,8 +6,11 @@ import Navbar from './Navbar';
 
 
  class Chats extends Component {
-    
-     componentDidMount() {
+
+    componentDidUpdate(){
+        this.props.getChatsComp()
+    }
+    componentDidMount() {
          this.props.getChatsComp()
          if(document.querySelector(".header")) {
             // When the user scrolls the page, execute myFunction
@@ -29,7 +32,7 @@ import Navbar from './Navbar';
           }
         }
          
-     }
+    }
     render() {
         console.log(this.props.chatsComp)
         const num = this.props.chatsComp.map(chat => <Chat key={chat._id} chat={chat} />)
@@ -51,7 +54,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getChatsComp: () => {dispatch(getChatsComp())}
+        getChatsComp: () => {dispatch(getChatsComp())},
     }
 }
 

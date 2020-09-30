@@ -24,6 +24,8 @@ app.use(express.json())
 
 mongoose.connect("mongodb+srv://Ikhuoria2:" + process.env.CODE + "@cluster0.mn66h.mongodb.net/chatsdb", { useNewUrlParser: true, useUnifiedTopology: true })
 
+// mongoose.connect("mongodb://localhost:27017/chats", { useNewUrlParser: true, useUnifiedTopology: true })
+
 const server = http.createServer(app)
 const io = socketio(server)
 
@@ -45,21 +47,21 @@ const chatsSchema = new mongoose.Schema({
 const chat = mongoose.model("chat", chatsSchema)
 
 const newChat = new chat({
-    id : 8,
-    name : "Ese",
+    id : 4,
+    name : "Pleasant",
     image : 'https://source.unsplash.com/random/250x300',
     message : [{
-        text: "new message from another person",
+        text: "Hello Pleasant",
         id: new Date().toLocaleTimeString(),
-        sent: true,
+        sent: false,
         time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
-        seen: true,
+        seen: false,
         newCount: 1,
-        new: false
+        new: true
     }],
 })
 
-// newChat.save()
+newChat.save()
 
 
 
@@ -89,6 +91,31 @@ app.post("/updatemessage", function(req,res) {
           }
         }
     );
+})
+
+app.post("/updateMessageCount", function(req,res) {
+    const id = req.body.id;
+    const message = req.body.message
+    console.log(req.body)
+    chat.findById({_id: id}, function(err, found){
+        if(err) {
+            console.log(err)
+        }
+        else {
+            console.log(found)
+            chat.updateOne(
+                { _id: id, "message.id": found.message[found.message.length -1].id},
+                {$set: {"message.$.new": message}},
+                function(err, result) {
+                  if (err) {
+                console.log(err);
+                  } else {
+                console.log(result);
+                  }
+                }
+            );
+        }
+    })
 })
 
 app.get("/*", function(req,res) {

@@ -1,6 +1,8 @@
 import {CHATS_COMP} from './types'
 import {UPDATE_MESSAGE} from './types'
+import {UPDATE_COUNT} from './types'
 import reduceUpdate from './reduceUpdate'
+import reduceCount from './reduceCount'
 import axios from 'axios'
 
 
@@ -12,6 +14,8 @@ export default function (state = initialState, action) {
         return [...state]
       case UPDATE_MESSAGE: 
        return state.map(post =>  reduceUpdate(post, action))
+      case UPDATE_COUNT: 
+      return state.map(post =>  reduceCount(post, action))
       default:
        return state;
    }
