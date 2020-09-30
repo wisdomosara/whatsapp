@@ -5,6 +5,7 @@ import {updateMessage} from '../actions.js/updateMessageAction'
 import io from 'socket.io-client'
 import { getChatsComp } from '../actions.js/getChatCompAction';
 import axios from 'axios'
+import ScrollToBottom from 'react-scroll-to-bottom';
 
 
 class ChatInterface extends Component {
@@ -133,10 +134,11 @@ componentWillUnmount() {
                 <i className="fas fa-ellipsis-v   ml-4 "></i>
             </div> 
         </div>
-        <div className="main" style={main}>
-        <div>{chatItem.length >= 1 ? chatItem : "no chats found"}
+        <ScrollToBottom className="main">
+          <div>{chatItem.length >= 1 ? chatItem : "no chats found"}
         </div>
-        </div>
+        </ScrollToBottom>
+      
         <div className="d-flex bottom-flex justify-content-between px-2  py-2">
           <div className="d-flex align-items-baseline mr-2 bg-white bottom-left pr-3  pl-2 py-2">
             <i className="fas fa-smile mr-2"></i>

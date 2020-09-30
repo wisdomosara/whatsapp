@@ -166,6 +166,9 @@ form{
   font-size: 30px;
   background-color: #25d366
 }
+.main{
+  height: calc(100% - 64px - 70px)
+}
 @media only screen and (min-width: 340px) {
   .bottom-flex{
     width: 100%;
