@@ -179,7 +179,7 @@ function Chate(props) {
   return (
     <div className="py-2 px-2 mr-2 d-flex align-items-baseline flex-wrap rounded mb-1 float-right" style={{maxWidth: "80%", clear: "both", wordWrap: "break-word", backgroundColor: "rgb(237, 248, 186)", boxSizing: "content-box"}}>
       <p className="mr-2 mb-0" style={{maxWidth: "100%"}}>{props.text}</p>
-      <p className=" mb-0 ml-auto float-right" style={{color: "rgb(121, 121, 121)", fontSize:12, width:"75px"}}>{props.time} { props.seen ? <i class="fas fa-check-double text-primary"></i> : <i class="fas fa-check  "></i>}</p>
+      <p className=" mb-0 ml-auto float-right" style={{color: "rgb(121, 121, 121)", fontSize:12}}>{props.time} { props.seen ? <i class="fas fa-check-double text-primary"></i> : <i class="fas fa-check  "></i>}</p>
     </div> 
   )
 }
