@@ -3,7 +3,6 @@ import {UPDATE_MESSAGE} from './types'
 import {UPDATE_COUNT} from './types'
 import reduceUpdate from './reduceUpdate'
 import reduceCount from './reduceCount'
-import axios from 'axios'
 
 
 const initialState = []

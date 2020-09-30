@@ -7,9 +7,7 @@ import Navbar from './Navbar';
 
  class Chats extends Component {
 
-    componentDidUpdate(){
-        this.props.getChatsComp()
-    }
+    
     componentDidMount() {
          this.props.getChatsComp()
          if(document.querySelector(".header")) {
@@ -34,7 +32,6 @@ import Navbar from './Navbar';
          
     }
     render() {
-        console.log(this.props.chatsComp)
         const num = this.props.chatsComp.map(chat => <Chat key={chat._id} chat={chat} />)
         return (
             <div>

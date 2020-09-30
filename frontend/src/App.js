@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import { connect } from 'react-redux';
-import { getChatsComp } from './actions.js/getChatCompAction';
+//import { connect } from 'react-redux';
+//import { getChatsComp } from './actions.js/getChatCompAction';
 import Camera from './components/Camera'
 import Chats from './components/Chats';
 import Status from './components/Status';
@@ -12,7 +12,6 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 class App extends Component {
   
   render () {
-    console.log(this.props)
       return (
       <div className="body">
         <BrowserRouter>

@@ -22,9 +22,9 @@ app.use(express.urlencoded({extended :false}))
 app.use(express.json())
 
 
-mongoose.connect("mongodb+srv://Ikhuoria2:" + process.env.CODE + "@cluster0.mn66h.mongodb.net/chatsdb", { useNewUrlParser: true, useUnifiedTopology: true })
+//mongoose.connect("mongodb+srv://Ikhuoria2:" + process.env.CODE + "@cluster0.mn66h.mongodb.net/chatsdb", { useNewUrlParser: true, useUnifiedTopology: true })
 
-//mongoose.connect("mongodb://localhost:27017/chats", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb://localhost:27017/chats", { useNewUrlParser: true, useUnifiedTopology: true })
 
 const server = http.createServer(app)
 const io = socketio(server)

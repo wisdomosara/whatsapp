@@ -169,6 +169,10 @@ form{
 .main{
   height: calc(100% - 64px - 70px)
 }
+video{
+  width: 300px;
+  height: 400px
+}
 @media only screen and (min-width: 340px) {
   .bottom-flex{
     width: 100%;

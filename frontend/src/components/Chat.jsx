@@ -5,11 +5,14 @@ import axios from 'axios'
 class Chat extends Component {
 
     handleCount = () => {
-        axios.post('/updateMessageCount', {
-            id: this.props.chat._id,
-            message: false
-        })
-        this.props.chat.message[this.props.chat.message.length - 1].new = false
+        if(this.props.chat.message[this.props.chat.message.length - 1].new == true) {
+            axios.post('/updateMessageCount', {
+                id: this.props.chat._id,
+                message: false
+            })
+            this.props.chat.message[this.props.chat.message.length - 1].new = false
+        }
+        
     }
   render() {
     const unread = {

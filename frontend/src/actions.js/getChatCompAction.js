@@ -6,7 +6,6 @@ export  const getChatsComp = () => {
         return (dispatch) => {
         axios.get("/api/chats")
         .then(response => {
-            console.log(response.data)
             dispatch({
                 type: CHATS_COMP,
                 chats: response.data

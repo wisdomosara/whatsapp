@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {Link, Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {updateMessage} from '../actions.js/updateMessageAction'
 import io from 'socket.io-client'
 import { getChatsComp } from '../actions.js/getChatCompAction';
-import axios from 'axios'
 import ScrollToBottom from 'react-scroll-to-bottom';
 
 
@@ -72,7 +71,6 @@ handleInput = () => {
 }
 componentDidMount() {
   const socket = io.connect("http://localhost:5000")
-  console.log(this.props.chatsComp)
   this.props.getChatsComp()
   
 }
@@ -108,11 +106,7 @@ componentWillUnmount() {
       height:"100%",
       width: "100%",
     }
-    const main = {
-      overflowY: "scroll",
-      height: "calc(100% - 64px - 70px)",
-    }
- 
+
     let chatItem = []
     
     if(this.props.chatsComp.length > 0) {
@@ -134,7 +128,7 @@ componentWillUnmount() {
                 <i className="fas fa-ellipsis-v   ml-4 "></i>
             </div> 
         </div>
-        <ScrollToBottom className="main">
+        <ScrollToBottom className="main" behavior="auto">
           <div>{chatItem.length >= 1 ? chatItem : "no chats found"}
         </div>
         </ScrollToBottom>
@@ -179,7 +173,7 @@ function Chate(props) {
   return (
     <div className="py-2 px-2 mr-2 d-flex align-items-baseline flex-wrap rounded mb-1 float-right" style={{maxWidth: "80%", clear: "both", wordWrap: "break-word", backgroundColor: "rgb(237, 248, 186)", boxSizing: "content-box"}}>
       <p className="mr-2 mb-0" style={{maxWidth: "100%"}}>{props.text}</p>
-      <p className=" mb-0 ml-auto float-right" style={{color: "rgb(121, 121, 121)", fontSize:12}}>{props.time} { props.seen ? <i class="fas fa-check-double text-primary"></i> : <i class="fas fa-check  "></i>}</p>
+      <p className=" mb-0 ml-auto float-right" style={{color: "rgb(121, 121, 121)", fontSize:12}}>{props.time} { props.seen ? <i className="fas fa-check-double text-primary"></i> : <i className="fas fa-check  "></i>}</p>
     </div> 
   )
 }
