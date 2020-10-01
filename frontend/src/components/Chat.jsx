@@ -12,9 +12,9 @@ class Chat extends Component {
             })
             this.props.chat.message[this.props.chat.message.length - 1].new = false
         }
-        
     }
-  render() {
+    render() {
+        
     const unread = {
         backgroundColor : "#25d366",
         borderRadius : "50%",
@@ -39,8 +39,8 @@ class Chat extends Component {
             <Link to={`/${this.props.chat._id}`} className="click">
                 <div className="chat-right pb-3 pt-3" onClick={this.handleCount}>
                     <div className="name">
-                            <h6 className="mb-1 text-dark pt-2">{this.props.chat.name}</h6>
-                            <p className="mb-0 message">{!this.props.chat.message[this.props.chat.message.length - 1].sent ? null : this.props.chat.message[this.props.chat.message.length - 1].seen ? <i className="fas fa-check-double mr-1 text-primary"></i> : <i className="fas fa-check mr-1 "></i>}{this.props.chat.message[this.props.chat.message.length - 1].text.length > 20 ? this.props.chat.message[this.props.chat.message.length - 1].text.substring(0,20) + "..." : this.props.chat.message[this.props.chat.message.length - 1].text}</p>
+                        <h6 className="mb-1 text-dark pt-2">{this.props.chat.name}</h6>
+                        <p className="mb-0 message">{!this.props.chat.message[this.props.chat.message.length - 1].sent ? null : this.props.chat.message[this.props.chat.message.length - 1].seen ? <img src="img/whatsdouble.png" width="15px"></img> : <i className="fas fa-check mr-1 "></i>}{this.props.chat.message[this.props.chat.message.length - 1].text.length > 20 ? this.props.chat.message[this.props.chat.message.length - 1].text.substring(0,20) + "..." : this.props.chat.message[this.props.chat.message.length - 1].text}</p>
                     </div>
                     <div className="time d-flex flex-column float-right">
                         <p className="mb-2 pt-2" style={this.props.chat.message[this.props.chat.message.length - 1].sent ? null : !this.props.chat.message[this.props.chat.message.length - 1].sent && this.props.chat.message[this.props.chat.message.length - 1].new ? {color : "#25d366"} : null}>{this.props.chat.message[this.props.chat.message.length - 1].time}</p>
@@ -55,7 +55,5 @@ class Chat extends Component {
     )
   }
 }
-
-
 
 export default Chat

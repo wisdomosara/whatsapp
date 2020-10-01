@@ -137,7 +137,6 @@ form{
   width: 100%;
   max-width: 1440px !important;
   margin: 0 auto;
-  background-color: rgb(216, 214, 214);
 }
 .bottom-flex i {
   font-size:20px
@@ -167,7 +166,8 @@ form{
   background-color: #25d366
 }
 .main{
-  height: calc(100% - 64px - 70px)
+  height: calc(100% - 64px - 70px);
+  
 }
 video{
   width: 300px;

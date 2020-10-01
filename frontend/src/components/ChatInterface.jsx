@@ -102,9 +102,16 @@ componentWillUnmount() {
       transform : "rotate(50deg)"
     }
     const body = {
-      backgroundColor : "rgb(216, 214, 214)",
+      
       height:"100%",
       width: "100%",
+      backgroundImage: "url(img/whatsback.png)",
+      backgroundSize: "cover"
+    }
+
+    const main = {
+      backgroundImage: "url(img/whatsback.png)",
+      backgroundSize: "cover"
     }
 
     let chatItem = []
@@ -128,7 +135,7 @@ componentWillUnmount() {
                 <i className="fas fa-ellipsis-v   ml-4 "></i>
             </div> 
         </div>
-        <ScrollToBottom className="main" behavior="auto">
+        <ScrollToBottom className="main" behavior="auto" style={main}>
           <div>{chatItem.length >= 1 ? chatItem : "no chats found"}
         </div>
         </ScrollToBottom>
@@ -171,9 +178,9 @@ function Chater(props) {
 }
 function Chate(props) {
   return (
-    <div className="py-2 px-2 mr-2 d-flex align-items-baseline flex-wrap rounded mb-1 float-right" style={{maxWidth: "80%", clear: "both", wordWrap: "break-word", backgroundColor: "rgb(237, 248, 186)", boxSizing: "content-box"}}>
+    <div className="py-2 px-2 mr-2 d-flex align-items-baseline flex-wrap rounded mb-1 float-right" style={{maxWidth: "80%", clear: "both", wordWrap: "break-word", backgroundColor: "#DCF8C6", boxSizing: "content-box"}}>
       <p className="mr-2 mb-0" style={{maxWidth: "100%"}}>{props.text}</p>
-      <p className=" mb-0 ml-auto float-right" style={{color: "rgb(121, 121, 121)", fontSize:12}}>{props.time} { props.seen ? <i className="fas fa-check-double text-primary"></i> : <i className="fas fa-check  "></i>}</p>
+      <p className=" mb-0 ml-auto float-right" style={{color: "rgb(121, 121, 121)", fontSize:12}}>{props.time} { props.seen ? <img src="img/whatsdouble.png" width="15px"></img> : <i className="fas fa-check  "></i>}</p>
     </div> 
   )
 }
